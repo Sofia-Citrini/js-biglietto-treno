@@ -1,5 +1,12 @@
-const kilometri = prompt("Inserisci i Km che vuoi percorrere");
+const kilometri = parseInt(prompt("Inserisci i Km che vuoi percorrere"));
+if (isNaN(kilometri)) {
+    alert("Kilometri inseriti non validi");
+}
+
 const age = parseInt(prompt("Inserisci la tua età"));
+if (isNaN(age)) {
+    alert("Età inserita non valida");
+}
 
 console.log("Kilometri:", kilometri);
 console.log("Età:", age);
@@ -7,11 +14,8 @@ console.log("Età:", age);
 // prezzo del biglietto
 const prezzo = kilometri * 0.21;
 
-// sconto (20% minorenni - 40% over 65)
-if (isNaN(age)) {
-    alert("Età inserita non valida");
-}
 
+// sconto (20% minorenni - 40% over 65)
 if (age >= 18 && age < 65) {
     console.log("Prezzo biglietto intero:", prezzo.toFixed(2));
 } else if (age < 18) {
