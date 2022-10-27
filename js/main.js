@@ -12,12 +12,14 @@ if (isNaN(age)) {
     alert("Età inserita non valida");
 }
 
-if (age >=18 && age <65) {
-    console.log ("Prezzo del biglietto intero:", prezzo);
+if (age >= 18 && age < 65) {
+    console.log("Prezzo biglietto intero:", prezzo.toFixed(2));
 } else if (age < 18) {
-    console.log ("Prezzo scontato del 20%:", prezzo - (prezzo * 20 / 100));
+    let prezzoMinorenni = prezzo - (prezzo * 20 / 100);
+    console.log("Prezzo bigliettto ridotto del 20%:", prezzoMinorenni.toFixed(2));
     alert("Sconto del 20%");
-} else if (age >= 65 ) {
-    console.log ("Prezzo scontato del 40%:", prezzo * 0.6);
+} else if (age >= 65) {
+    let prezzoAnziani = prezzo * 0.6
+    console.log("Prezzo biglietto ridotto del 40%:", prezzoAnziani.toFixed(2));
     alert("Sconto del 40%");
 }
